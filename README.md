@@ -1,10 +1,10 @@
 # Transportation Protocol on the Ethereum Blockchain
 
-Follow these steps to get a dapp on the Ethereum public testnet up and running.  The application presents you with a simple web interface that takes in the information related to the item you want transported.  The data is written to the chain we have deployed on the Ropsten network.
+Follow these steps to get a dapp on Ethereum.  The application presents you with a simple web interface that takes in the information related to the item you want transported.  The data is written directly to the blockchain we have deployed on the Ropsten network.
 
 While following these steps will get you an up and running dapps there are still a few things missing.  For starters, we cannot confirm what has been added nor is it listed.  Do not feel constrained just to improve the existing code base.  Be adventurous and innovative and create a decentralized application that solves a problem in the real world.
 
-#### First we need to install our dependencies
+### First we need to install our dependencies
 
 [Install Ganache](https://truffleframework.com/ganache).  Your test blockchain that can be run on several networks and is currently configured with this project to give you access to wallet address and test Ether.
 
@@ -12,21 +12,25 @@ While following these steps will get you an up and running dapps there are still
 
 [Install MetaMask](https://metamask.io/). Browser extension where we can interact with our blockchain through Chrome.
 
-#### Write our smart contract
+[Great Dapp University Tutorial from Start to Finish](http://www.dappuniversity.com/articles/blockchain-app-tutorial)
 
-Before we get started modifying our smart contracts in the `contracts` folder we need to provide a test environment where we will have access to the data we need to get the project started.  Opening Ganache is all you need to do.
+### Write our smart contract
+
+Before we get started modifying our smart contracts in the `contracts/` folder we need to provide a test environment where we will have access to the data we need to get the project started.  Opening Ganache is all you need to do.
 
 <img width="1148" alt="Screen Shot 2019-04-05 at 5 37 30 PM" src="https://user-images.githubusercontent.com/7444521/55662583-8d2b9f00-57c9-11e9-8c53-98a803153429.png">
 
-We must create a new smart contract any time we make code changes. 
+We must first create a new smart contract any time we make code changes.
+[Take a look at `Transportation.sol` written in Solidity](https://github.com/amohnacs15/EthereumProtocol/blob/master/contracts/Transportation.sol)
 ````
 truffle compile
 truffle migrate
 ````
 
-**You've successfully deployed your contract to the blockchain**.  The code you have just written has just been compiled down to an Application Binary Interface (ABI) and codified onto the blockchain the same way a bitcoin or address is.  We can no longer modify with this code.  Luckily Truffle provides a shortcut to assist with this. We can re-run the migrations like this:
+**You've successfully deployed your contract to the blockchain**.  
 
-In your command line navigate to the root folder for Ethereum Protocol and run `truffle migrate --reset`
+The code you have just written has just been compiled down to an Application Binary Interface (ABI) and codified onto the blockchain the same way a bitcoin or address is.  We can no longer modify with this code.  Luckily, Truffle provides a shortcut to assist with this. We can re-run the migrations like this:
+- In your command line navigate to the root folder for Ethereum Protocol and run `truffle migrate --reset`
 
 Notice that your application says "Loading...". That's because we're not logged in to the blockchain yet! In order to connect to the blockchain, we need to import one of the accounts from Ganache into Metamask. You can watch me set up Metamask in this video at [43:55](https://youtu.be/rzvk2kdjr2I?t=43m55s).
 
@@ -39,15 +43,13 @@ These can be found in the folder labeled `test` and run using the `truffle test`
 ### Running the client
 
 Once we're sure everything works, now you're ready for the application to be seen in your browser!
-`npm run dev` this will run your local node and front-end on the address and port specified in the `truffle-config.js` file.
+- Enter the command `npm run dev` this will run your local node and front-end on the address and port specified in the `truffle-config.js` file.
 
 <img width="1276" alt="Screen Shot 2019-04-05 at 12 56 49 PM" src="https://user-images.githubusercontent.com/7444521/55653128-61e18980-57a2-11e9-905b-06240be4aa59.png">
 
 - Enter the data in the input fields
 - Click submite
 - You'll see a Metamask confirmation pop up. You must sign this transaction in order to create the task.
-
-<img width="356" alt="Screen Shot 2019-04-05 at 1 00 16 PM" src="https://user-images.githubusercontent.com/7444521/55653261-d0bee280-57a2-11e9-811d-80ca79fd26b4.png">
 
 ### Deploying to the public blockchain
 
