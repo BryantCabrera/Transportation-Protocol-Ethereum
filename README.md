@@ -1,32 +1,52 @@
-# TransportationProtocol
+# Transportation Protocol on the Ethereum Blockchain
 
-Install Ganache
-https://truffleframework.com/ganache
+Follow these steps to get a dapp on the Ethereum public testnet up and running.  The application presents you with a simple web interface that takes in the information related to the item you want transported.  The data is written to the chain we have deployed on the Ropsten network.
 
-install truffle
-https://truffleframework.com/docs/truffle/getting-started/installation
+While following these steps will get you an up and running dapps there are still a few things missing.  For starters, we cannot confirm what has been added nor is it listed.  Do not feel constrained just to improve the existing code base.  Be adventurous and innovative and create a decentralized application that solves a problem in the real world.
 
-install metamask
+#### First we need to install our dependencies
 
-write our smart contract
+[Install Ganache](https://truffleframework.com/ganache).  Your test blockchain that can be run on several networks and is currently configured with this project to give you access to wallet address and test Ether.
 
-Our next goal is to access the smart contract inside the Truffle console. However, we cannot run the Truffle console because our application is not yet connected to the Ganache personal blockchain network we set up in the dependencies section.
+[Install Truffle](https://truffleframework.com/docs/truffle/getting-started/installation).  Development framework for Ethereum that will assist with the coding, comilation, migration, and deployment of your smart contracts.
 
-we must create a new smart contract any time we make code changes. Luckily Truffle provides a shortcut to assist with this. We can re-run the migrations like this:
+[Install MetaMask](https://metamask.io/). Browser extension where we can interact with our blockchain through Chrome.
 
-$ truffle migrate --reset
+#### Write our smart contract
 
-You have successfully loaded the client side application. 😃 Notice that your application says "Loading...". That's because we're not logged in to the blockchain yet! In order to connect to the blockchain, we need to import one of the accounts from Ganache into Metamask. You can watch me set up Metamask in the video at 43:55.
+Before we get started modifying our smart contracts in the `contracts` folder we need to provide a test environment where we will have access to the data we need to get the project started.  Opening Ganache is all you need to do.
 
-Write tests
+<img width="1148" alt="Screen Shot 2019-04-05 at 5 37 30 PM" src="https://user-images.githubusercontent.com/7444521/55662583-8d2b9f00-57c9-11e9-8c53-98a803153429.png">
+
+We must create a new smart contract any time we make code changes. Luckily Truffle provides a shortcut to assist with this. We can re-run the migrations like this:
+
+In your command line navigate to the root folder for Ethereum Protocol and run `truffle migrate --reset`
+
+You have successfully loaded the client side application! 
+
+Notice that your application says "Loading...". That's because we're not logged in to the blockchain yet! In order to connect to the blockchain, we need to import one of the accounts from Ganache into Metamask. You can watch me set up Metamask in this video at [43:55](https://youtu.be/rzvk2kdjr2I?t=43m55s).
+
+#### Don't forget to run your tests
+
+These can be found in the folder labeled `test` and run using the `truffle test` command in your console.
+
 <img width="1209" alt="Screen Shot 2019-04-05 at 11 31 25 AM" src="https://user-images.githubusercontent.com/7444521/55653127-6017c600-57a2-11e9-9223-300ab3f17766.png">
 
-Create Tasks
-The accompanying video footage for this portion of the tutorial begins at 1:05:07.
+Once we're sure everything works, now you're ready for the application to be seen in your browser!
+`npm run dev` this will run your local node and front-end on the address and port specified in the `truffle-config.js` file.
+
+<img width="1276" alt="Screen Shot 2019-04-05 at 12 56 49 PM" src="https://user-images.githubusercontent.com/7444521/55653128-61e18980-57a2-11e9-905b-06240be4aa59.png">
+
+- Enter the data in the input fields
+- Click submite
+- You'll see a Metamask confirmation pop up. You must sign this transaction in order to create the task.
 
 <img width="356" alt="Screen Shot 2019-04-05 at 1 00 16 PM" src="https://user-images.githubusercontent.com/7444521/55653261-d0bee280-57a2-11e9-811d-80ca79fd26b4.png">
 
+.env and connecting to Infura
+don't forget npm install dotenv
 
-Now you should be able to add new tasks from the client side application! Notice, there is no "submit" button on the form. I left it off to simplify the user interface. You must hit the "enter" key on your keyboard to submit a task. Once you do, you'll see a Metamask confirmation pop up. You must sign this transaction in order to create the task.
+successfully deploy to ropsten test network iwth HDWalletProvider
 
-<img width="1276" alt="Screen Shot 2019-04-05 at 12 56 49 PM" src="https://user-images.githubusercontent.com/7444521/55653128-61e18980-57a2-11e9-905b-06240be4aa59.png">
+Interact with with the contracts that you've deployed on the Mainnet
+Use infura as a remote node
