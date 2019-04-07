@@ -66,7 +66,39 @@ Infura can be used as a remote node. So take the time right now to sign up for f
 
 <img width="1150" alt="Screen Shot 2019-04-05 at 5 55 21 PM" src="https://user-images.githubusercontent.com/7444521/55662837-31aee080-57cc-11e9-894b-97a7b2278e02.png">
 
-<img width="997" alt="Screen Shot 2019-04-05 at 5 48 20 PM" src="https://user-images.githubusercontent.com/7444521/55662821-10e68b00-57cc-11e9-95ff-a0e4bf8f519b.png">
+**You're `truffle-config.js` file should look something like this**
+
+````
+require('dotenv').config();
+const HDWalletProvider = require('truffle-hdwallet-provider');
+
+module.exports = {
+  networks: {
+    ropsten: {
+      //wrapping this in a function is important
+      provider: function() {
+        return new HDWalletProvider(
+          process.env.MNEMONIC,
+          `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`
+          )
+      },
+      gasPrice: 2500000000,
+      network_id: 3
+    }
+  },
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*" // Match any network id
+    },
+  solc: {
+    optimizer: {
+      enabled: true,
+      runs: 200
+    }
+  }
+}
+````
 
 The last thing you need to do is run the command line `truffle migrate --reset --network ropsten`.  Your application is ready and transactions can be searched for on the Ropsten Blockchain using a website such as EtherScan.
 
