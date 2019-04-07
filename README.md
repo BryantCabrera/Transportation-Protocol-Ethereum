@@ -64,7 +64,7 @@ Infura can be used as a remote node. So take the time right now to sign up for f
 
 <img width="845" alt="Screen Shot 2019-04-05 at 5 48 50 PM" src="https://user-images.githubusercontent.com/7444521/55662822-13e17b80-57cc-11e9-9f72-07310b04709d.png">
 
-<img width="1150" alt="Screen Shot 2019-04-05 at 5 55 21 PM" src="https://user-images.githubusercontent.com/7444521/55662837-31aee080-57cc-11e9-894b-97a7b2278e02.png">
+<img width="1147" alt="Screen Shot 2019-04-07 at 8 37 20 AM" src="https://user-images.githubusercontent.com/7444521/55685940-662bb500-5910-11e9-9933-c34b6fda98aa.png">
 
 **You're `truffle-config.js` file should look something like this**
 
