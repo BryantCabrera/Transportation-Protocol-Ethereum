@@ -102,7 +102,7 @@ module.exports = {
 
 The last thing you need to do is run the command line `truffle migrate --reset --network ropsten`.  Your application is ready and transactions can be searched for on the Ropsten Blockchain using a website such as EtherScan.
 
-Your output should look something like this
+This is my confirmation of deployment to the blockchain
 
 <img width="1227" alt="Screen Shot 2019-04-05 at 9 55 31 AM" src="https://user-images.githubusercontent.com/7444521/55685876-c5d59080-590f-11e9-946d-afefc55addb0.png">
 
